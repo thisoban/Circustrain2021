@@ -152,10 +152,10 @@ namespace CicustrainAlgorithmTest
             {
                 new Animal(1, Diet.Carnivore),
                 new Animal(5, Diet.Herbivore),
+               
                 new Animal(3, Diet.Herbivore),
+               new Animal(3, Diet.Herbivore),
                 new Animal(3, Diet.Herbivore),
-                new Animal(3, Diet.Herbivore),
-              
                 new Animal(5, Diet.Herbivore)
      
 

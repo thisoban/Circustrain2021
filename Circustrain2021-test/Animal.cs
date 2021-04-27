@@ -38,7 +38,6 @@ namespace Circustrain2021_test
                 return biggestCarnivoreAnimal == null || biggestCarnivoreAnimal.Weight < Weight;
             }
             return false;
-
         }
     }
 }
