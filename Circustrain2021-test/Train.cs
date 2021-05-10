@@ -14,11 +14,27 @@ namespace Circustrain2021_test
 
         public Train() => _wagons = new List<Wagon>();
 
-        public void OrderAnimalsInWagons(List<Animal> inputAnimals)
+        public void SortAnimals(List<Animal> InputAnimals)
         {
-            foreach (Animal animal in inputAnimals.OrderBy(x => x.Diet).OrderByDescending(x => x.Weight))
+            Animal[][] animals = new Animal[2][];
+            List<Animal> Carnivores = InputAnimals.Where(x => x.Diet == Diet.Carnivore).OrderByDescending(x => x.Weight).ToList();
+            List<Animal> Herbvivores = InputAnimals.Where(x => x.Diet == Diet.Herbivore).OrderBy(x => x.Weight).ToList();
+            animals[0] = Carnivores.ToArray();
+            animals[1] = Herbvivores.ToArray();
+         
+        }
+        public void OrderAnimalsInWagons(Animal[][] animals)
+        {
+
+            foreach (Animal animal in animals[0])
             {
                 SearchForAvaibleWagon(animal).PlaceAnimal(animal);
+            }
+            while (animals[1].Length > 0)
+            {
+                animals[1].First();
+               
+
             }
         }
         private void AddWagon(Wagon wagon) => _wagons.Add(wagon);

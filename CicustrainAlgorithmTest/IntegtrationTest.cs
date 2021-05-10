@@ -12,22 +12,22 @@ namespace CicustrainAlgorithmTest
         Animal[][] animalsarray =
         {
             new Animal[] {
-                new Animal  (1, Diet.Carnivore),
-                new Animal  (3, Diet.Carnivore),
-                new Animal  (5, Diet.Carnivore),
-                new Animal  (1, Diet.Herbivore),
-                new Animal  (3, Diet.Herbivore),
-                new Animal  (5, Diet.Herbivore)
+                new Animal  (Weight.Small, Diet.Carnivore),
+                new Animal  (Weight.Medium, Diet.Carnivore),
+                new Animal  (Weight.Large, Diet.Carnivore),
+                new Animal  (Weight.Small, Diet.Herbivore),
+                new Animal  (Weight.Medium, Diet.Herbivore),
+                new Animal  (Weight.Large, Diet.Herbivore)
 
             },
             new Animal[]
             {
-                new Animal  (1, Diet.Carnivore),
-                new Animal  (3, Diet.Carnivore),
-                new Animal  (5, Diet.Carnivore),
-                new Animal  (1, Diet.Herbivore),
-                new Animal  (3, Diet.Herbivore),
-                new Animal  (5, Diet.Herbivore)
+                new Animal  (Weight.Small, Diet.Carnivore),
+                new Animal  (Weight.Medium, Diet.Carnivore),
+                new Animal  (Weight.Large, Diet.Carnivore),
+                new Animal  (Weight.Small, Diet.Herbivore),
+                new Animal  (Weight.Medium, Diet.Herbivore),
+                new Animal  (Weight.Large, Diet.Herbivore)
             }
         };
 
@@ -69,7 +69,6 @@ namespace CicustrainAlgorithmTest
         [TestMethod]
         public void TestMatrix_placing_different_animals_together()
         {
-
             for (int x = 0; x < animalsarray[0].Length; x++)
             {
                 Wagon wagon = new Wagon();
@@ -81,87 +80,80 @@ namespace CicustrainAlgorithmTest
             }
         }
         [TestMethod]
-        public void TestHerd1()
+        public void Distribute_Animals_Into_2_Wagons_H5_1_H3_3_H1_4()
         {
             List<Animal> herbivoreherd = new List<Animal>()
             {
-                new Animal(5, Diet.Herbivore),
-                new Animal(3, Diet.Herbivore),
-                new Animal(1, Diet.Herbivore),
-                new Animal(1, Diet.Herbivore),
-                new Animal(3, Diet.Herbivore),
-                new Animal(3, Diet.Herbivore),
-                new Animal(1, Diet.Herbivore),
-                new Animal(1, Diet.Herbivore),
-                new Animal(1, Diet.Herbivore)
-
+                new Animal(Weight.Large, Diet.Herbivore),
+                new Animal(Weight.Medium, Diet.Herbivore),
+                new Animal(Weight.Small, Diet.Herbivore),
+                new Animal(Weight.Small, Diet.Herbivore),
+                new Animal(Weight.Medium, Diet.Herbivore),
+                new Animal(Weight.Medium, Diet.Herbivore),
+                new Animal(Weight.Small, Diet.Herbivore),
+                new Animal(Weight.Small, Diet.Herbivore),
+                new Animal(Weight.Small, Diet.Herbivore)
             };
-          Train train =  new Train();
-            train.OrderAnimalsInWagons(herbivoreherd);
+            Train train =  new Train();
+         //   train.OrderAnimalsInWagons(herbivoreherd);
             Assert.AreEqual(2, train.Wagons.Count());
         }
         [TestMethod]
-        public void TestHerd2()
+        public void Distribute_Animals_Into_6_Wagons_C5_2_C3_3_H5_3_H1_1()
         {
             List<Animal> MixedHerd = new List<Animal>()
             {
-                new Animal(5, Diet.Carnivore),
-                new Animal(5, Diet.Carnivore),
-                new Animal(3, Diet.Carnivore),
-                new Animal(5, Diet.Herbivore),
-                new Animal(3, Diet.Carnivore),
-                new Animal(5, Diet.Herbivore),
-                new Animal(3, Diet.Carnivore),
-                new Animal(5, Diet.Herbivore),
-                new Animal(1, Diet.Carnivore)
-
+                new Animal(Weight.Large, Diet.Carnivore),
+                new Animal(Weight.Large, Diet.Carnivore),
+                new Animal(Weight.Medium, Diet.Carnivore),
+                new Animal(Weight.Large, Diet.Herbivore),
+                new Animal(Weight.Medium, Diet.Carnivore),
+                new Animal(Weight.Large, Diet.Herbivore),
+                new Animal(Weight.Medium, Diet.Carnivore),
+                new Animal(Weight.Large, Diet.Herbivore),
+                new Animal(Weight.Small, Diet.Carnivore)
             };
             Train train = new Train();
-            train.OrderAnimalsInWagons(MixedHerd);
+         //   train.OrderAnimalsInWagons(MixedHerd);
             Assert.AreEqual(6, train.Wagons.Count());
         }
 
         [TestMethod]
-        public void TestHerd4()
+        public void Distribute_Animals_into_8_Wagons_H1_5_H3__H5_5_C1_2_C3_2_C5_2()
         {
 
         }
 
         [TestMethod]
-        public void TestHerd5()
+        public void Distribute_Animals_Into_2_Wagons_H5_2_H3_3_C1_1()
         {
             List<Animal> herbivoreherd = new List<Animal>()
             {
-                new Animal(3, Diet.Herbivore),
-                new Animal(3, Diet.Herbivore),
-                new Animal(3, Diet.Herbivore),
-                new Animal(1, Diet.Carnivore),
-                new Animal(5, Diet.Herbivore),
-                new Animal(5, Diet.Herbivore)
-
-
+                new Animal(Weight.Medium, Diet.Herbivore),
+                new Animal(Weight.Medium, Diet.Herbivore),
+                new Animal(Weight.Medium, Diet.Herbivore),
+                new Animal(Weight.Small, Diet.Carnivore),
+                new Animal(Weight.Large, Diet.Herbivore),
+                new Animal(Weight.Large, Diet.Herbivore)
             };
             Train train = new Train();
-            train.OrderAnimalsInWagons(herbivoreherd);
+          //  train.OrderAnimalsInWagons(herbivoreherd);
             Assert.AreEqual(2, train.Wagons.Count());
         }
         [TestMethod]
-        public void TestHerd6()
+        public void Distribute_Animals_Into_2_Wagons_C1_1_H5_2_H3_3_()
         {
             List<Animal> herbivoreherd = new List<Animal>()
             {
-                new Animal(1, Diet.Carnivore),
-                new Animal(5, Diet.Herbivore),
-               
-                new Animal(3, Diet.Herbivore),
-               new Animal(3, Diet.Herbivore),
-                new Animal(3, Diet.Herbivore),
-                new Animal(5, Diet.Herbivore)
-     
-
+                new Animal(Weight.Small, Diet.Carnivore),
+                new Animal(Weight.Large, Diet.Herbivore),
+                new Animal(Weight.Medium, Diet.Herbivore),
+                new Animal(Weight.Medium, Diet.Herbivore),
+                new Animal(Weight.Medium, Diet.Herbivore),
+                new Animal(Weight.Large, Diet.Herbivore)
             };
             Train train = new Train();
-            train.OrderAnimalsInWagons(herbivoreherd);
+         //   train.OrderAnimalsInWagons(herbivoreherd);
             Assert.AreEqual(2, train.Wagons.Count());
         }
     }

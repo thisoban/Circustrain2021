@@ -11,14 +11,14 @@ namespace CicustrainAlgorithmTest
         [TestMethod]
         public void Animal_Herbivoor1_Wont_Be_eaten()
         {
-            Animal animal = new Animal(1, Diet.Herbivore);
+            Animal animal = new Animal(Weight.Small, Diet.Herbivore);
             List<Animal> animals = new List<Animal>()
             {
-                new Animal(1, Diet.Herbivore),
-                new Animal(1, Diet.Herbivore),
-                new Animal(1, Diet.Herbivore),
-                new Animal(1, Diet.Herbivore),
-                new Animal(1, Diet.Herbivore)
+                new Animal(Weight.Small, Diet.Herbivore),
+                new Animal(Weight.Small, Diet.Herbivore),
+                new Animal(Weight.Small, Diet.Herbivore),
+                new Animal(Weight.Small, Diet.Herbivore),
+                new Animal(Weight.Small, Diet.Herbivore)
             };
           
            Assert.IsTrue( animal.WontBeEaten(animals));

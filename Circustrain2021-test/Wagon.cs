@@ -20,7 +20,6 @@ namespace Circustrain2021_test
         {
             if (CanAnimalBePlaced(animal)) _animalsInWagon.Add(animal);
         }
-
-        private bool IsSpaceAvaiable(Animal animal) => _animalsInWagon.Sum(a => a.Weight) + animal.Weight <= _maxCapacity;
+        private bool IsSpaceAvaiable(Animal animal) => _animalsInWagon.Sum(a => (int)a.Weight) + (int)animal.Weight <= _maxCapacity;
     }
 }
