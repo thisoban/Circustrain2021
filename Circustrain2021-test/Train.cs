@@ -16,26 +16,34 @@ namespace Circustrain2021_test
 
         public void SortAnimals(List<Animal> InputAnimals)
         {
-            Animal[][] animals = new Animal[2][];
+            
             List<Animal> Carnivores = InputAnimals.Where(x => x.Diet == Diet.Carnivore).OrderByDescending(x => x.Weight).ToList();
-            List<Animal> Herbvivores = InputAnimals.Where(x => x.Diet == Diet.Herbivore).OrderBy(x => x.Weight).ToList();
-            animals[0] = Carnivores.ToArray();
-            animals[1] = Herbvivores.ToArray();
-         
+            List<Animal> BiggestCarnivores = InputAnimals.Where(x => x.Diet == Diet.Carnivore).Where(x=>x.Weight == Weight.Large).ToList();
+            List<Animal> MediumCarnivores = InputAnimals.Where(x => x.Diet == Diet.Carnivore).Where(x=>x.Weight == Weight.Medium).ToList();
+            List<Animal> SmallCarnivores = InputAnimals.Where(x => x.Diet == Diet.Carnivore).Where(x=>x.Weight == Weight.Small).ToList();
+            List<Animal> largeherbivore = InputAnimals.Where(x => x.Diet == Diet.Herbivore).Where(x =>x.Weight == Weight.Large).ToList();
+            List<Animal> MediummHerbivore = InputAnimals.Where(x => x.Diet == Diet.Herbivore).Where(x => x.Weight == Weight.Medium).ToList();
+            List<Animal> SmallHerbivore = InputAnimals.Where(x => x.Diet == Diet.Herbivore).Where(x => x.Weight == Weight.Small).ToList();
+            OrderAnimalsInWagons(Carnivores);
+            //OrderAnimalsInWagons(Herbvivores);
+
+            foreach (Animal animal in MediumCarnivores)
+            {
+                if (animal.Weight == Weight.Medium)
+                {
+
+                }
+            }
+
         }
-        public void OrderAnimalsInWagons(Animal[][] animals)
+        public void OrderAnimalsInWagons(List<Animal> Animal)
         {
 
-            foreach (Animal animal in animals[0])
+            foreach (Animal animal in Animal)
             {
                 SearchForAvaibleWagon(animal).PlaceAnimal(animal);
             }
-            while (animals[1].Length > 0)
-            {
-                animals[1].First();
-               
-
-            }
+            
         }
         private void AddWagon(Wagon wagon) => _wagons.Add(wagon);
         private Wagon SearchForAvaibleWagon(Animal animal)

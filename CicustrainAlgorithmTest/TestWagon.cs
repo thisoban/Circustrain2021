@@ -10,8 +10,6 @@ namespace CicustrainAlgorithmTest
 {[TestClass]
    public class TestWagon
     {
-        
-
         [TestMethod]
         public void TestPlacing_HerbivoreAnimal_In_Empty_Wagon()
         {

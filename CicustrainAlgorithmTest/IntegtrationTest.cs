@@ -95,7 +95,7 @@ namespace CicustrainAlgorithmTest
                 new Animal(Weight.Small, Diet.Herbivore)
             };
             Train train =  new Train();
-         //   train.OrderAnimalsInWagons(herbivoreherd);
+            train.OrderAnimalsInWagons(herbivoreherd);
             Assert.AreEqual(2, train.Wagons.Count());
         }
         [TestMethod]
@@ -114,7 +114,7 @@ namespace CicustrainAlgorithmTest
                 new Animal(Weight.Small, Diet.Carnivore)
             };
             Train train = new Train();
-         //   train.OrderAnimalsInWagons(MixedHerd);
+            train.OrderAnimalsInWagons(MixedHerd);
             Assert.AreEqual(6, train.Wagons.Count());
         }
 
@@ -137,7 +137,7 @@ namespace CicustrainAlgorithmTest
                 new Animal(Weight.Large, Diet.Herbivore)
             };
             Train train = new Train();
-          //  train.OrderAnimalsInWagons(herbivoreherd);
+            train.OrderAnimalsInWagons(herbivoreherd);
             Assert.AreEqual(2, train.Wagons.Count());
         }
         [TestMethod]
@@ -153,7 +153,7 @@ namespace CicustrainAlgorithmTest
                 new Animal(Weight.Large, Diet.Herbivore)
             };
             Train train = new Train();
-         //   train.OrderAnimalsInWagons(herbivoreherd);
+            train.OrderAnimalsInWagons(herbivoreherd);
             Assert.AreEqual(2, train.Wagons.Count());
         }
     }
