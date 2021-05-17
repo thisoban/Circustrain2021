@@ -22,7 +22,6 @@ namespace Circustrain2021_test
             return Weight.ToString() + " " + Diet.ToString();
         }
 
-        // dier check naar ander dier
         public bool WontBeEaten(List<Animal> animals)
         {
             Animal biggestCarnivoreAnimal = animals.Where(a=> a.Diet == Diet.Carnivore).FirstOrDefault();
@@ -32,11 +31,11 @@ namespace Circustrain2021_test
             {
                 return biggestCarnivoreAnimal == null && (smallestHerbivoreAnimal == null || smallestHerbivoreAnimal.Weight > Weight);
             }
-
             if (Diet == Diet.Herbivore)
             {
                 return biggestCarnivoreAnimal == null || biggestCarnivoreAnimal.Weight < Weight;
             }
+
             return false;
         }
     }
