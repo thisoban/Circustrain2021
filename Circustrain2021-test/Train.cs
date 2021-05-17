@@ -33,9 +33,6 @@ namespace Circustrain2021_test
             animals.AddRange(largeherbivore);
             animals.AddRange(SmallHerbivore);
             OrderAnimalsInWagons(animals);
-           
-          
-
         }
         public void OrderAnimalsInWagons(List<Animal> Animal)
         {
