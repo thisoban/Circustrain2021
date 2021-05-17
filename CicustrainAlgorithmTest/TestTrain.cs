@@ -38,7 +38,7 @@ namespace CicustrainAlgorithmTest
             };
 
           
-            train.OrderAnimalsInWagons(animals);
+            train.SortAnimals(animals);
 
             Assert.AreEqual(5, train.Wagons.Count());
         }
@@ -61,7 +61,7 @@ namespace CicustrainAlgorithmTest
                 new Animal(Weight.Small, Diet.Herbivore)
             };
          
-           train.OrderAnimalsInWagons(animals);
+           train.SortAnimals(animals);
 
             Assert.AreEqual(1, train.Wagons.Count());
         }
@@ -113,7 +113,7 @@ namespace CicustrainAlgorithmTest
                 new Animal(Weight.Small, Diet.Herbivore)
             };
         
-           train.OrderAnimalsInWagons(animals);
+           train.SortAnimals(animals);
 
             Assert.AreEqual(4, train.Wagons.Count());
         }

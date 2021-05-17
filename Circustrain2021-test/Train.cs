@@ -24,32 +24,25 @@ namespace Circustrain2021_test
             List<Animal> largeherbivore = InputAnimals.Where(x => x.Diet == Diet.Herbivore).Where(x =>x.Weight == Weight.Large).ToList();
             List<Animal> MediummHerbivore = InputAnimals.Where(x => x.Diet == Diet.Herbivore).Where(x => x.Weight == Weight.Medium).ToList();
             List<Animal> SmallHerbivore = InputAnimals.Where(x => x.Diet == Diet.Herbivore).Where(x => x.Weight == Weight.Small).ToList();
-            OrderAnimalsInWagons(BiggestCarnivores);
-            OrderAnimalsInWagons(SmallCarnivores);
-            OrderAnimalsInWagons(MediummHerbivore);
-            OrderAnimalsInWagons(MediumCarnivores);
-            OrderAnimalsInWagons(largeherbivore);
-            OrderAnimalsInWagons(SmallHerbivore);
+
+            List<Animal> animals = new List<Animal>();
+            animals.AddRange(BiggestCarnivores);
+            animals.AddRange(SmallCarnivores);
+            animals.AddRange(MediummHerbivore);
+            animals.AddRange(MediumCarnivores);
+            animals.AddRange(largeherbivore);
+            animals.AddRange(SmallHerbivore);
+            OrderAnimalsInWagons(animals);
            
-            //OrderAnimalsInWagons(Herbvivores);
-
-            foreach (Animal animal in MediumCarnivores)
-            {
-                if (animal.Weight == Weight.Medium)
-                {
-
-                }
-            }
+          
 
         }
         public void OrderAnimalsInWagons(List<Animal> Animal)
         {
-
             foreach (Animal animal in Animal)
             {
                 SearchForAvaibleWagon(animal).PlaceAnimal(animal);
             }
-            
         }
         private void AddWagon(Wagon wagon) => _wagons.Add(wagon);
         private Wagon SearchForAvaibleWagon(Animal animal)

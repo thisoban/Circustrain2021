@@ -67,7 +67,7 @@ namespace CicustrainAlgorithmTest
         };
 
         [TestMethod]
-        public void TestMatrix_placing_different_animals_together()
+        public void TestMatrix_placing_different_animals_together_in_one_wagon()
         {
             for (int x = 0; x < animalsarray[0].Length; x++)
             {
@@ -95,7 +95,7 @@ namespace CicustrainAlgorithmTest
                 new Animal(Weight.Small, Diet.Herbivore)
             };
             Train train =  new Train();
-            train.OrderAnimalsInWagons(herbivoreherd);
+            train.SortAnimals(herbivoreherd);
             Assert.AreEqual(2, train.Wagons.Count());
         }
         [TestMethod]
@@ -114,14 +114,40 @@ namespace CicustrainAlgorithmTest
                 new Animal(Weight.Small, Diet.Carnivore)
             };
             Train train = new Train();
-            train.OrderAnimalsInWagons(MixedHerd);
+            train.SortAnimals(MixedHerd);
             Assert.AreEqual(6, train.Wagons.Count());
         }
 
         [TestMethod]
-        public void Distribute_Animals_into_8_Wagons_H1_5_H3__H5_5_C1_2_C3_2_C5_2()
+        public void Distribute_Animals_into_8_Wagons_H1_5_H3_5_H5_5_C1_2_C3_2_C5_2()
         {
-
+            List<Animal> animals = new List<Animal>()
+            {
+                new Animal(Weight.Small, Diet.Herbivore),
+                new Animal(Weight.Small, Diet.Herbivore),
+                new Animal(Weight.Small, Diet.Herbivore),
+                new Animal(Weight.Small, Diet.Herbivore),
+                new Animal(Weight.Small, Diet.Herbivore),
+                new Animal(Weight.Medium, Diet.Herbivore),
+                new Animal(Weight.Medium, Diet.Herbivore),
+                new Animal(Weight.Medium, Diet.Herbivore),
+                new Animal(Weight.Medium, Diet.Herbivore),
+                new Animal(Weight.Medium, Diet.Herbivore),
+                new Animal(Weight.Large, Diet.Herbivore),
+                new Animal(Weight.Large, Diet.Herbivore),
+                new Animal(Weight.Large, Diet.Herbivore),
+                new Animal(Weight.Large, Diet.Herbivore),
+                new Animal(Weight.Large, Diet.Herbivore),
+                new Animal(Weight.Small, Diet.Carnivore),
+                new Animal(Weight.Small, Diet.Carnivore),
+                new Animal(Weight.Medium, Diet.Carnivore),
+                new Animal(Weight.Medium, Diet.Carnivore),
+                new Animal(Weight.Large, Diet.Carnivore),
+                new Animal(Weight.Large, Diet.Carnivore)
+            };
+            Train train = new Train();
+            train.SortAnimals(animals);
+            Assert.AreEqual(8, train.Wagons.Count());
         }
 
         [TestMethod]
@@ -137,7 +163,7 @@ namespace CicustrainAlgorithmTest
                 new Animal(Weight.Large, Diet.Herbivore)
             };
             Train train = new Train();
-            train.OrderAnimalsInWagons(herbivoreherd);
+            train.SortAnimals(herbivoreherd);
             Assert.AreEqual(2, train.Wagons.Count());
         }
         [TestMethod]
@@ -153,7 +179,7 @@ namespace CicustrainAlgorithmTest
                 new Animal(Weight.Large, Diet.Herbivore)
             };
             Train train = new Train();
-            train.OrderAnimalsInWagons(herbivoreherd);
+            train.SortAnimals(herbivoreherd);
             Assert.AreEqual(2, train.Wagons.Count());
         }
     }
