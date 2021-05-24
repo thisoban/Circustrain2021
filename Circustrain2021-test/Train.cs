@@ -20,12 +20,12 @@ namespace Circustrain2021_test
             
             List<Animal> sortedAnimals = new List<Animal>();
           
-            sortedAnimals.AddRange(Carnivore.Where(x=> x.Weight == Weight.Small)); //c1
-            sortedAnimals.AddRange(Herbivore.Where(x=> x.Weight == Weight.Medium)); //h3
-            sortedAnimals.AddRange(Carnivore.Where(x => x.Weight == Weight.Medium)); //c3
-            sortedAnimals.AddRange(Herbivore.Where(x=> x.Weight == Weight.Large)); //h5
-            sortedAnimals.AddRange(Herbivore.Where(x=> x.Weight == Weight.Small)); //h1
-            sortedAnimals.AddRange(Carnivore.Where(x=> x.Weight == Weight.Large)); //c5
+            sortedAnimals.AddRange(Carnivore.Where(x=> x.Weight == Weight.Small)); 
+            sortedAnimals.AddRange(Herbivore.Where(x=> x.Weight == Weight.Medium)); 
+            sortedAnimals.AddRange(Carnivore.Where(x => x.Weight == Weight.Medium)); 
+            sortedAnimals.AddRange(Herbivore.Where(x=> x.Weight == Weight.Large)); 
+            sortedAnimals.AddRange(Herbivore.Where(x=> x.Weight == Weight.Small)); 
+            sortedAnimals.AddRange(Carnivore.Where(x=> x.Weight == Weight.Large)); 
  
             OrderAnimalsInWagons(sortedAnimals);
         }
