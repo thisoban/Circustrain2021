@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace Circustrain2021_test
 {
-    public class Animal
+    public class Animal : IAnimal
     {
         public Weight Weight { get; }
         public Diet Diet { get; }
+
+        
 
         public Animal(Weight weight, Diet diet)
         {

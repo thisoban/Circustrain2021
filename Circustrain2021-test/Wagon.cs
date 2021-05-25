@@ -10,9 +10,8 @@ namespace Circustrain2021_test
     {
         private readonly List<Animal> _animalsInWagon;
         private const int _maxCapacity = 10;
-
+       public IEnumerable<Animal> WagonAnimals => _animalsInWagon;
         
-
         public Wagon() => _animalsInWagon = new List<Animal>();
 
         public int Animals => _animalsInWagon.Count();
