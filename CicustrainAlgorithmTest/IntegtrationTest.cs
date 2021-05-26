@@ -12,22 +12,22 @@ namespace CicustrainAlgorithmTest
         Animal[][] animalsarray =
         {
             new Animal[] {
-                new Animal  (Weight.Small, Diet.Carnivore),
-                new Animal  (Weight.Medium, Diet.Carnivore),
-                new Animal  (Weight.Large, Diet.Carnivore),
-                new Animal  (Weight.Small, Diet.Herbivore),
-                new Animal  (Weight.Medium, Diet.Herbivore),
-                new Animal  (Weight.Large, Diet.Herbivore)
+                new Carnivore  (Weight.Small),
+                new Carnivore  (Weight.Medium),
+                new Carnivore  (Weight.Large),
+                new Herbivore  (Weight.Small),
+                new Herbivore  (Weight.Medium),
+                new Herbivore  (Weight.Large)
 
             },
             new Animal[]
             {
-                new Animal  (Weight.Small, Diet.Carnivore),
-                new Animal  (Weight.Medium, Diet.Carnivore),
-                new Animal  (Weight.Large, Diet.Carnivore),
-                new Animal  (Weight.Small, Diet.Herbivore),
-                new Animal  (Weight.Medium, Diet.Herbivore),
-                new Animal  (Weight.Large, Diet.Herbivore)
+                new Carnivore  (Weight.Small),
+                new Carnivore  (Weight.Medium),
+                new Carnivore  (Weight.Large),
+                new Herbivore  (Weight.Small),
+                new Herbivore  (Weight.Medium),
+                new Herbivore  (Weight.Large)
             }
         };
 
@@ -84,15 +84,15 @@ namespace CicustrainAlgorithmTest
         {
             List<Animal> herbivoreherd = new List<Animal>()
             {
-                new Animal(Weight.Large, Diet.Herbivore),
-                new Animal(Weight.Medium, Diet.Herbivore),
-                new Animal(Weight.Small, Diet.Herbivore),
-                new Animal(Weight.Small, Diet.Herbivore),
-                new Animal(Weight.Medium, Diet.Herbivore),
-                new Animal(Weight.Medium, Diet.Herbivore),
-                new Animal(Weight.Small, Diet.Herbivore),
-                new Animal(Weight.Small, Diet.Herbivore),
-                new Animal(Weight.Small, Diet.Herbivore)
+                new Herbivore(Weight.Large),
+                new Herbivore(Weight.Medium),
+                new Herbivore(Weight.Small),
+                new Herbivore(Weight.Small),
+                new Herbivore(Weight.Medium),
+                new Herbivore(Weight.Medium),
+                new Herbivore(Weight.Small),
+                new Herbivore(Weight.Small),
+                new Herbivore(Weight.Small)
             };
             Train train =  new Train();
             train.SortedAnimals(herbivoreherd);
@@ -103,15 +103,15 @@ namespace CicustrainAlgorithmTest
         {
             List<Animal> MixedHerd = new List<Animal>()
             {
-                new Animal(Weight.Large, Diet.Carnivore),
-                new Animal(Weight.Large, Diet.Carnivore),
-                new Animal(Weight.Medium, Diet.Carnivore),
-                new Animal(Weight.Large, Diet.Herbivore),
-                new Animal(Weight.Medium, Diet.Carnivore),
-                new Animal(Weight.Large, Diet.Herbivore),
-                new Animal(Weight.Medium, Diet.Carnivore),
-                new Animal(Weight.Large, Diet.Herbivore),
-                new Animal(Weight.Small, Diet.Carnivore)
+                new Carnivore(Weight.Large),
+                new Carnivore(Weight.Large),
+                new Carnivore(Weight.Medium),
+                new Herbivore(Weight.Large),
+                new Carnivore(Weight.Medium),
+                new Herbivore(Weight.Large),
+                new Carnivore(Weight.Medium),
+                new Herbivore(Weight.Large),
+                new Carnivore(Weight.Small)
             };
             Train train = new Train();
             train.SortedAnimals(MixedHerd);
@@ -123,27 +123,27 @@ namespace CicustrainAlgorithmTest
         {
             List<Animal> animals = new List<Animal>()
             {
-                new Animal(Weight.Small, Diet.Herbivore),
-                new Animal(Weight.Small, Diet.Herbivore),
-                new Animal(Weight.Small, Diet.Herbivore),
-                new Animal(Weight.Small, Diet.Herbivore),
-                new Animal(Weight.Small, Diet.Herbivore),
-                new Animal(Weight.Medium, Diet.Herbivore),
-                new Animal(Weight.Medium, Diet.Herbivore),
-                new Animal(Weight.Medium, Diet.Herbivore),
-                new Animal(Weight.Medium, Diet.Herbivore),
-                new Animal(Weight.Medium, Diet.Herbivore),
-                new Animal(Weight.Large, Diet.Herbivore),
-                new Animal(Weight.Large, Diet.Herbivore),
-                new Animal(Weight.Large, Diet.Herbivore),
-                new Animal(Weight.Large, Diet.Herbivore),
-                new Animal(Weight.Large, Diet.Herbivore),
-                new Animal(Weight.Small, Diet.Carnivore),
-                new Animal(Weight.Small, Diet.Carnivore),
-                new Animal(Weight.Medium, Diet.Carnivore),
-                new Animal(Weight.Medium, Diet.Carnivore),
-                new Animal(Weight.Large, Diet.Carnivore),
-                new Animal(Weight.Large, Diet.Carnivore)
+                new Herbivore(Weight.Small),
+                new Herbivore(Weight.Small),
+                new Herbivore(Weight.Small),
+                new Herbivore(Weight.Small),
+                new Herbivore(Weight.Small),
+                new Herbivore(Weight.Medium),
+                new Herbivore(Weight.Medium),
+                new Herbivore(Weight.Medium),
+                new Herbivore(Weight.Medium),
+                new Herbivore(Weight.Medium),
+                new Herbivore(Weight.Large),
+                new Herbivore(Weight.Large),
+                new Herbivore(Weight.Large),
+                new Herbivore(Weight.Large),
+                new Herbivore(Weight.Large),
+                new Carnivore(Weight.Small),
+                new Carnivore(Weight.Small),
+                new Carnivore(Weight.Medium),
+                new Carnivore(Weight.Medium),
+                new Carnivore(Weight.Large),
+                new Carnivore(Weight.Large)
             };
             Train train = new Train();
             train.SortedAnimals(animals);
@@ -155,12 +155,12 @@ namespace CicustrainAlgorithmTest
         {
             List<Animal> herbivoreherd = new List<Animal>()
             {
-                new Animal(Weight.Medium, Diet.Herbivore),
-                new Animal(Weight.Medium, Diet.Herbivore),
-                new Animal(Weight.Medium, Diet.Herbivore),
-                new Animal(Weight.Small, Diet.Carnivore),
-                new Animal(Weight.Large, Diet.Herbivore),
-                new Animal(Weight.Large, Diet.Herbivore)
+                new Herbivore(Weight.Medium),
+                new Herbivore(Weight.Medium),
+                new Herbivore(Weight.Medium),
+                new Carnivore(Weight.Small),
+                new Herbivore(Weight.Large),
+                new Herbivore(Weight.Large)
             };
             Train train = new Train();
             train.SortedAnimals(herbivoreherd);
@@ -171,12 +171,12 @@ namespace CicustrainAlgorithmTest
         {
             List<Animal> herbivoreherd = new List<Animal>()
             {
-                new Animal(Weight.Small, Diet.Carnivore),
-                new Animal(Weight.Large, Diet.Herbivore),
-                new Animal(Weight.Medium, Diet.Herbivore),
-                new Animal(Weight.Medium, Diet.Herbivore),
-                new Animal(Weight.Medium, Diet.Herbivore),
-                new Animal(Weight.Large, Diet.Herbivore)
+                new Carnivore(Weight.Small) ,
+                new Herbivore(Weight.Large) ,
+                new Herbivore(Weight.Medium),
+                new Herbivore(Weight.Medium),
+                new Herbivore(Weight.Medium),
+                new Herbivore(Weight.Large)
             };
             Train train = new Train();
             train.SortedAnimals(herbivoreherd);

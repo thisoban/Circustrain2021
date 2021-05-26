@@ -13,7 +13,7 @@ namespace CicustrainAlgorithmTest
         [TestMethod]
         public void TestPlacing_HerbivoreAnimal_In_Empty_Wagon()
         {
-            Animal animal1 = new Animal(Weight.Large, Diet.Herbivore);
+            Herbivore animal1 = new Herbivore(Weight.Large);
             Wagon wagon = new Wagon();
             wagon.PlaceAnimal(animal1);
             Assert.AreEqual(1, wagon.Animals);
@@ -21,7 +21,7 @@ namespace CicustrainAlgorithmTest
         [TestMethod]
         public void TestPlacing_CarnivoreAnimal_In_Empty_Wagon()
         {
-            Animal animal1 = new Animal(Weight.Large, Diet.Carnivore);
+            Carnivore animal1 = new Carnivore(Weight.Large);
             Wagon wagon = new Wagon();
             wagon.PlaceAnimal(animal1);
             Assert.AreEqual(1, wagon.Animals);
@@ -29,9 +29,9 @@ namespace CicustrainAlgorithmTest
         [TestMethod]
         public void Test_Third_Animal_Doesnt_Fit_In_Wagon()
         {
-            Animal animal1 = new Animal(Weight.Large, Diet.Herbivore);
-            Animal animal2 = new Animal(Weight.Large, Diet.Herbivore);
-            Animal animal3 = new Animal(Weight.Large, Diet.Herbivore);
+            Animal animal1 = new Herbivore(Weight.Large);
+            Animal animal2 = new Herbivore(Weight.Large);
+            Animal animal3 = new Herbivore(Weight.Large);
             Wagon wagon = new Wagon();
             wagon.PlaceAnimal(animal1);
             wagon.PlaceAnimal(animal2);
@@ -41,8 +41,8 @@ namespace CicustrainAlgorithmTest
         [TestMethod]
         public void Test_Placing_BIgherbivoor_BigCarnivoor_Same_wagon_Not_Allowed()
         {
-            Animal herbivoor = new Animal(Weight.Large, Diet.Herbivore);
-            Animal carnivoor = new Animal(Weight.Large, Diet.Carnivore);
+            Animal herbivoor = new Herbivore(Weight.Large);
+            Animal carnivoor = new Carnivore(Weight.Large);
             Wagon wagon = new Wagon();
             wagon.PlaceAnimal(herbivoor);
             Assert.IsFalse(wagon.CanAnimalBePlaced(carnivoor));
@@ -52,8 +52,8 @@ namespace CicustrainAlgorithmTest
         [TestMethod]
         public void unvalid_placing_two_differnt_diet_same_weight_one_wagon()
         {
-            Animal herbivoor = new Animal(Weight.Large, Diet.Herbivore);
-            Animal carnivoor = new Animal(Weight.Large, Diet.Carnivore);
+            Animal herbivoor = new Herbivore(Weight.Large);
+            Animal carnivoor = new Carnivore(Weight.Large);
             Wagon wagon = new Wagon();
             wagon.PlaceAnimal(herbivoor);
             Assert.IsFalse(wagon.CanAnimalBePlaced(carnivoor));
