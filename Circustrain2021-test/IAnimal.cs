@@ -8,8 +8,6 @@ namespace Circustrain2021_test
 {
     public interface IAnimal
     {
-       
-
         bool WontBeEaten(List<Animal> animals);
     }
 }

@@ -183,18 +183,18 @@ namespace CicustrainAlgorithmTest
             Assert.AreEqual(2, train.Wagons.Count());
         }
 
-        [TestMethod]
-        public void Check_Every_Wagon_for_1Carnivoor(List<Wagon> wagons)
-        {
+        //[TestMethod]
+        //public void Check_Every_Wagon_for_1Carnivoor(List<Wagon> wagons)
+        //{
            
-            foreach (Wagon wagon in wagons)
-            {
-                int count = 0;
-                foreach (Animal animal in wagon.WagonAnimals)
-                {
-                    if (animal.Diet == Diet.Carnivore) => count += 1;
-                }
-            }
-        }
+        //    foreach (Wagon wagon in wagons)
+        //    {
+        //        int count = 0;
+        //        foreach (Animal animal in wagon.WagonAnimals)
+        //        {
+        //            if (animal.Diet == Diet.Carnivore) => count += 1;
+        //        }
+        //    }
+        //}
     }
 }
