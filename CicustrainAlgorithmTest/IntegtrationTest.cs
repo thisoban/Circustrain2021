@@ -115,6 +115,10 @@ namespace CicustrainAlgorithmTest
             };
             Train train = new Train();
             train.SortedAnimals(MixedHerd);
+
+
+            foreach (Wagon wagon in train.Wagons)
+            Assert.IsTrue(wagon.WagonAnimals.Where(x => x.Diet == Diet.Carnivore).ToList().Count <= 1);
             Assert.AreEqual(6, train.Wagons.Count());
         }
 
@@ -147,6 +151,8 @@ namespace CicustrainAlgorithmTest
             };
             Train train = new Train();
             train.SortedAnimals(animals);
+            foreach (Wagon wagon in train.Wagons)
+            Assert.IsTrue(wagon.WagonAnimals.Where(x => x.Diet == Diet.Carnivore).ToList().Count <= 1);
             Assert.AreEqual(8, train.Wagons.Count());
         }
 
@@ -164,6 +170,8 @@ namespace CicustrainAlgorithmTest
             };
             Train train = new Train();
             train.SortedAnimals(herbivoreherd);
+            foreach (Wagon wagon in train.Wagons)
+            Assert.IsTrue(wagon.WagonAnimals.Where(x => x.Diet == Diet.Carnivore).ToList().Count <= 1);
             Assert.AreEqual(2, train.Wagons.Count());
         }
         [TestMethod]
@@ -180,6 +188,8 @@ namespace CicustrainAlgorithmTest
             };
             Train train = new Train();
             train.SortedAnimals(herbivoreherd);
+            foreach (Wagon wagon in train.Wagons)
+            Assert.IsTrue(wagon.WagonAnimals.Where(x => x.Diet == Diet.Carnivore).ToList().Count <= 1);
             Assert.AreEqual(2, train.Wagons.Count());
         }
 

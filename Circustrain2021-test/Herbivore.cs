@@ -8,9 +8,7 @@ namespace Circustrain2021_test
 {
    public class Herbivore : Animal
     {
-        public Weight Weight;
-        public Diet Diet;
-
+       
         public Herbivore(Weight weight)
         {
             Weight = weight;
